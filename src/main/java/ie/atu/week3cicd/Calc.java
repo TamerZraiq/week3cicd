@@ -20,7 +20,10 @@ public class Calc {
                 return num1 + " x " + num2 + " = " + multiply;
 
             case "divide":
-                int divide = num1 / num2;
+                float divide = (float)num1 / (float)num2;
+                if(num2 == 0){
+                    return "Error!! second number shouldn't be 0";
+                }
                 return num1 + " / " + num2 + " = " + divide;
         }
     return operation;
