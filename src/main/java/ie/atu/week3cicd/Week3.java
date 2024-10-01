@@ -1,9 +1,6 @@
 package ie.atu.week3cicd;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/person")
@@ -20,8 +17,9 @@ public class Week3 {
     public String myName(@PathVariable String name){
         return "Your Name is " + name;
     }
+
     @GetMapping("/details")
-    public String getDetails(){
-        return "Some Other Message";
+    public String details(@RequestParam String name, @RequestParam int age){
+        return name + " " + age;
     }
 }
